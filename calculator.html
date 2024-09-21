@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            width: 90%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <label>Enter first number -</label>
+    <input id="num1" type="number"><br><br>
+
+    <label>Enter second number -</label>
+    <input id="num2" type="number"><br>
+<br>
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select><br>
+<br>
+    <div id="result"></div>
+    <button onclick="Calculate()">Calculate</button><br>
+
+    <script>
+        function Calculate() {
+            var a = parseInt(document.getElementById('num1').value);
+            var b = parseInt(document.getElementById('num2').value);
+            var operator = document.getElementById('operator').value;
+            var resultDiv = document.getElementById("result");
+            var result;
+
+            switch (operator) {
+                case '+':
+                    result = a + b;
+                    break;
+                case '-':
+                    result = a - b;
+                    break;
+                case '*':
+                    result = a * b;
+                    break;
+                case '/':
+                    result = a / b;
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+
+            resultDiv.textContent = result;
+        }
+    </script>
+</body>
+
+</html>
